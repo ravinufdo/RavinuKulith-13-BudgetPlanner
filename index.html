@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Budget Planner</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="background-grid"></div>
+
+<div class="container">
+
+    <div class="icon-box">
+        💰
+    </div>
+    <h1>Budget Planner</h1>
+    <p class="subtitle">
+        Enter your monthly take-home income and we'll generate a
+        personalized spending plan you can tune to your life.
+    </p>
+    <div class="card">
+        <label>
+            MONTHLY TAKE-HOME INCOME
+        </label>
+        <div class="input-row">
+            <span class="dollar">$</span>
+            <input
+                id="income"
+                type="text"
+                value="5,000"
+                autocomplete="off">
+        </div>
+        <hr>
+        <div class="quick-buttons">
+            <button data-value="2500">$2.5k</button>
+            <button data-value="4000">$4k</button>
+            <button data-value="6000">$6k</button>
+            <button data-value="10000">$10k</button>
+        </div>
+        <div class="Generate">
+        <button id="generate">
+            Generate My Budget
+            <i class="fa-solid fa-arrow-right"></i>
+            <a href="dashboard.html"></a>
+        </button>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature">
+            <div class="emoji">📊</div>
+            <p>Visual chart</p>
+        </div>
+        <div class="feature">
+            <div class="emoji">✏️</div>
+            <p>Editable plan</p>
+        </div>
+        <div class="feature">
+            <div class="emoji">⚖️</div>
+            <p>Balance tracker</p>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
