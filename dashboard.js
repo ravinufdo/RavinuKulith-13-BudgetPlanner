@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     row.innerHTML = `
       <input type="text" class="cat-name" placeholder="Category name" value="${category.name}">
       <div class="cat-amount-wrap">
-        <span class="dollar">$</span>
-        <input type="number" class="cat-amount" min="0" step="1" value="${category.amount || ''}" placeholder="0">
+        
+        <input type="number" class="cat-amount" min="0" step="1" value="${category.amount || ''}"  placeholder="$0">
       </div>
       <select class="cat-type">
         <option value="needs">Needs</option>
@@ -51,9 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <option value="savings">Savings</option>
         <option value="debt">Debt</option>
       </select>
+      
       <button class="cat-delete" title="Remove category" type="button">
-        <i class="fa-solid fa-trash"></i>
+        <img src="delete.png" width="35" height="32"/>
       </button>
+      
     `;
 
     row.querySelector('.cat-type').value = category.type;

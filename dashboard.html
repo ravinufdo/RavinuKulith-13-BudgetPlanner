@@ -8,8 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="dashboard.css">
 </head>
 
@@ -18,7 +17,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <div class="background-grid"></div>
 <nav>
 <div class="logo">
-💰
+        <img src="logo.png" width="40" height="40"/> 
 <span>Budget Planner</span>
 </div>
 
@@ -55,6 +54,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     </div>
 
+
 <span id="allocationPercent">0%</span>
 </div>
 
@@ -66,22 +66,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
 <div class="stats">
-    <div class="card">
+    <div class="cards">
 <p>Needs</p>
 <h2 id="needsPercent">0%</h2>
     </div>
 
-<div class="card">
+<div class="cards">
     <p>Wants</p>
 <h2 id="wantsPercent">0%</h2>
 </div>
-        <div class="card">
+        <div class="cards">
 <p>Savings</p>
        <h2 id="savingsPercent">0%</h2>
        </div>
-            <div class="card">
-<p>Debt</p>
-<h2 id="debtPercent">0%</h2>
+         <div class="cards">
+            <p>Debt</p>
+            <h2 id="debtPercent">0%</h2>
             </div>
         </div>
     </section>
@@ -97,6 +97,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <ul id="pie-chart-legend"></ul>
     </div>
 </div>
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
