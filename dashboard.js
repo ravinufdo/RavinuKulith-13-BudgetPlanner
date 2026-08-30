@@ -1,27 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
   const categoryContainer = document.getElementById('categoryContainer');
-  const addCategoryBtn   = document.getElementById('addCategory');
-  const incomeDisplay    = document.getElementById('incomeDisplay');
+  const addCategoryBtn = document.getElementById('addCategory');
+  const incomeDisplay = document.getElementById('incomeDisplay');
   const remainingDisplay = document.getElementById('remainingDisplay');
-  const progressBar      = document.getElementById('progressBar');
-  const allocationPercent= document.getElementById('allocationPercent');
-  const needsPercent     = document.getElementById('needsPercent');
-  const wantsPercent     = document.getElementById('wantsPercent');
-  const savingsPercent   = document.getElementById('savingsPercent');
-  const debtPercent      = document.getElementById('debtPercent');
+  const progressBar = document.getElementById('progressBar');
+  const allocationPercent = document.getElementById('allocationPercent');
+  const needsPercent = document.getElementById('needsPercent');
+  const wantsPercent = document.getElementById('wantsPercent');
+  const savingsPercent = document.getElementById('savingsPercent');
+  const debtPercent = document.getElementById('debtPercent');
 
-  
+
   let monthlyIncome = parseFloat(localStorage.getItem('monthlyIncome')) || 1000;
-  incomeDisplay.textContent = `$${monthlyIncome.toLocaleString()}`;
-
   let categories = [];
   let categoryIdCounter = 0;
+  const savedPlan = localStorage.getItem('budgetPlan');
+
+  if (savedPlan) {
+
+    const plan = JSON.parse(savedPlan);
+    if (Array.isArray(plan.categories)) {
+      categories = plan.categories;
+    }
+
+    if (categories.length > 0) {
+      categoryIdCounter =
+        Math.max(...categories.map(c => c.id)) + 1;
+    }
+
+  }
+
+  incomeDisplay.textContent =
+    `$${monthlyIncome.toLocaleString()}`;
 
   const colors = {
-    needs:   '#4f8cff',
-    wants:   '#ffb547',
+    needs: '#4f8cff',
+    wants: '#ffb547',
     savings: '#4fdc8c',
-    debt:    '#ff5c7a'
+    debt: '#ff5c7a'
   };
 
   addCategoryBtn.addEventListener('click', () => addCategory());
@@ -51,11 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <option value="savings">Savings</option>
         <option value="debt">Debt</option>
       </select>
-      
+      <br><br>
       <button class="cat-delete" title="Remove category" type="button">
-        <img src="delete.png" width="35" height="32"/>
+        <img src="delete.png" width="30" height="27"/>
       </button>
-      
     `;
 
     row.querySelector('.cat-type').value = category.type;
@@ -106,24 +121,24 @@ document.addEventListener('DOMContentLoaded', () => {
     categories.forEach(c => { totals[c.type] += c.amount || 0; });
 
     const base = totalAllocated > 0 ? totalAllocated : 1;
-    needsPercent.textContent   = `${Math.round((totals.needs   / base) * 100)}%`;
-    wantsPercent.textContent   = `${Math.round((totals.wants   / base) * 100)}%`;
+    needsPercent.textContent = `${Math.round((totals.needs / base) * 100)}%`;
+    wantsPercent.textContent = `${Math.round((totals.wants / base) * 100)}%`;
     savingsPercent.textContent = `${Math.round((totals.savings / base) * 100)}%`;
-    debtPercent.textContent    = `${Math.round((totals.debt    / base) * 100)}%`;
+    debtPercent.textContent = `${Math.round((totals.debt / base) * 100)}%`;
 
     updateCharts(totals, remaining);
   }
 
-  
+
   let barChart, pieChart;
-  const barCtx   = document.getElementById('budgetChart');
-  const pieCtx   = document.getElementById('pie-chart');
+  const barCtx = document.getElementById('budgetChart');
+  const pieCtx = document.getElementById('pie-chart');
   const pieLegend = document.getElementById('pie-chart-legend');
 
   function updateCharts(totals, remaining) {
     const labels = ['Needs', 'Wants', 'Savings', 'Debt'];
-    const data   = [totals.needs, totals.wants, totals.savings, totals.debt];
-    const bg     = [colors.needs, colors.wants, colors.savings, colors.debt];
+    const data = [totals.needs, totals.wants, totals.savings, totals.debt];
+    const bg = [colors.needs, colors.wants, colors.savings, colors.debt];
 
     if (barCtx) {
       if (!barChart) {
@@ -145,9 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (pieCtx) {
-      const pieData   = remaining > 0 ? [...data, remaining] : data;
+      const pieData = remaining > 0 ? [...data, remaining] : data;
       const pieLabels = remaining > 0 ? [...labels, 'Unallocated'] : labels;
-      const pieBg     = remaining > 0 ? [...bg, '#2a3142'] : bg;
+      const pieBg = remaining > 0 ? [...bg, '#2a3142'] : bg;
 
       if (!pieChart) {
         pieChart = new Chart(pieCtx, {
@@ -170,5 +185,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  addCategory('', 0, 'needs');
+
+  if (categories.length > 0) {
+    categories.forEach(category => {
+      renderCategory(category);
+    });
+
+    updateSummary();
+
+  } else {
+    addCategory('', 0, 'needs');
+  }
+
+  const savePlanBtn = document.getElementById('savePlan');
+
+  savePlanBtn.addEventListener('click', () => {
+
+    const plan = {
+      categories: categories
+    };
+
+    localStorage.setItem(
+      'budgetPlan',
+      JSON.stringify(plan)
+    );
+
+    alert('Your budget plan has been saved!');
+
+  });
+
+  const resetPlanBtn = document.getElementById('resetPlan');
+  resetPlanBtn.addEventListener('click', () => {
+    const confirmReset = confirm(
+      'Are you sure you want to reset your budget plan?'
+    );
+
+    if (!confirmReset) {
+      return;
+    }
+
+    localStorage.removeItem('budgetPlan');
+    categories = [];
+    categoryIdCounter = 0;
+    categoryContainer.innerHTML = '';
+    addCategory('', 0, 'needs');
+    updateSummary();
+  });
+
 });
+

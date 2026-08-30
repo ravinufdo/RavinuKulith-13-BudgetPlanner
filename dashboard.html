@@ -2,107 +2,115 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Budget Dashboard</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="dashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
 
-<div class="background-grid"></div>
-<nav>
-<div class="logo">
-        <img src="logo.png" width="40" height="40"/> 
-<span>Budget Planner</span>
-</div>
+    <div class="background-grid"></div>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" width="40" height="40" /></a>
+            <span>Budget Planner</span>
 
-<div class="top-info">
-   <div>
-      <p>MONTHLY INCOME</p>
-      <h3 id="incomeDisplay">$100000</h3>
-   </div>
-<div>
+        </div>
 
-<p>UNALLOCATED</p>
+        <div class="top-info">
+            <div>
+                <p>MONTHLY INCOME</p>
+                <h3 id="incomeDisplay">$1</h3>
+            </div>
+            <div>
 
-        <h3 id="remainingDisplay">$10000</h3>
-      </div>
-   </div>
-</nav>
+                <p>UNALLOCATED</p>
 
-<div class="dashboard">
-
-<section class="left-panel">
-<h2>Budget Categories</h2>
-     <div id="categoryContainer">
-
-</div>
-
-<button id="addCategory">
-+ Add Category
-</button>
-
-        <div class="allocation">
-           <p>Total Allocated</p>
-            <div class="progress">
-            <div id="progressBar"></div>
-
-    </div>
-
-
-<span id="allocationPercent">0%</span>
-</div>
-
-</section>
-
-<section class="right-panel">
-    <div class="chart-card">
-        <canvas id="budgetChart"></canvas>
-    </div>
-
-<div class="stats">
-    <div class="cards">
-<p>Needs</p>
-<h2 id="needsPercent">0%</h2>
-    </div>
-
-<div class="cards">
-    <p>Wants</p>
-<h2 id="wantsPercent">0%</h2>
-</div>
-        <div class="cards">
-<p>Savings</p>
-       <h2 id="savingsPercent">0%</h2>
-       </div>
-         <div class="cards">
-            <p>Debt</p>
-            <h2 id="debtPercent">0%</h2>
+                <h3 id="remainingDisplay">$</h3>
             </div>
         </div>
-    </section>
-</div>
-<div class="result">
-    <div class="pie-chart-container">
-        <canvas
-        id="pie-chart"
-        class="animate-pie-chart"
-        width="600"
-        height="600">
-    </canvas>
-    <ul id="pie-chart-legend"></ul>
-    </div>
-</div>
+    </nav>
+
+    <div class="dashboard">
+
+        <section class="left-panel">
+            <h2>Budget Categories</h2>
+            <div id="categoryContainer">
+
+            </div>
+
+            <button id="addCategory">
+                + Add Category
+            </button>
+
+            <button id="savePlan">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Save Plan
+            </button>
+
+            <button id="resetPlan">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset Plan
+            </button>
+
+            <div class="allocation">
+                <p>Total Allocated</p>
+                <div class="progress">
+                    <div id="progressBar"></div>
+
+                </div>
 
 
+                <span id="allocationPercent">0%</span>
+            </div>
 
+        </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="dashboard.js"></script>
+        <section class="right-panel">
+            <div class="chart-card">
+                <canvas id="budgetChart"></canvas>
+            </div>
+
+            <div class="stats">
+                <div class="cards">
+                    <p>Needs</p>
+                    <h2 id="needsPercent">0%</h2>
+                </div>
+
+                <div class="cards">
+                    <p>Wants</p>
+                    <h2 id="wantsPercent">0%</h2>
+                </div>
+                <div class="cards">
+                    <p>Savings</p>
+                    <h2 id="savingsPercent">0%</h2>
+                </div>
+                <div class="cards">
+                    <p>Debt</p>
+                    <h2 id="debtPercent">0%</h2>
+                </div>
+            </div>
+
+            <section class="pie-container">
+                <div class="result">
+                    <div class="pie-chart-container">
+                        <canvas id="pie-chart" class="animate-pie-chart"></canvas>
+                        <ul id="pie-chart-legend"></ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <br><br><br>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="dashboard.js"></script>
 </body>
 
 </html>
