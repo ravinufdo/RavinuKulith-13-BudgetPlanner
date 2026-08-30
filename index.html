@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -7,89 +8,87 @@
 
     <title>Budget Planner</title>
 
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="background-grid"></div>
+    <div class="background-grid"></div>
 
-<div class="floating-circles">
-    <span class="circle circle1"></span>
-    <span class="circle circle2"></span>
-    <span class="circle circle3"></span>
-    <span class="circle circle4"></span>
-    <span class="circle circle5"></span>
-    <span class="circle circle6"></span>
-    <span class="circle circle7"></span>
-    <span class="circle circle8"></span>
-</div>
-
-<div class="container">
-
-    <div class="icon-box">
-        <img src="logo.png" width="90" height="90"/> 
+    <div class="floating-circles">
+        <span class="circle circle1"></span>
+        <span class="circle circle2"></span>
+        <span class="circle circle3"></span>
+        <span class="circle circle4"></span>
+        <span class="circle circle5"></span>
+        <span class="circle circle6"></span>
+        <span class="circle circle7"></span>
+        <span class="circle circle8"></span>
     </div>
-    <h1>Budget Planner</h1>
-    <p class="subtitle">
-        Enter your monthly take-home income and we'll generate a
-        personalized spending plan you can tune to your life.
-    </p>
-    <div class="card">
-        <label>
-            MONTHLY TAKE-HOME INCOME
-        </label>
-        <div class="input-row">
-            <span class="dollar">$</span>
-            <input
-                id="income"
-                type="text"
-                value="0"
-                autocomplete="off">
-        </div>
-        <hr>
-        <div class="quick-buttons">
-            <button data-value="2500">$2.5k</button>
-            <button data-value="4000">$4k</button>
-            <button data-value="6000">$6k</button>
-            <button data-value="10000">$10k</button>
-        </div>
-        <div class="Generate">
-        <button id="generate">
-            Generate My Budget
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
 
-        </div> 
-    </div>
-    
-    <div class="features">
-        <div class="feature">
-            <div class="logo">
-                <img src="chart.png" width="50" height="50"/>
-            </div>
-            <p>Visual chart</p>
+    <div class="container">
+
+        <div class="icon-box">
+            <img src="logo.png" width="90" height="90" />
         </div>
-        <div class="feature">
-            <div class="logo">
-                <img src="pencil.png" width="50" height="50"/>
+        <h1>Budget Planner</h1>
+        <p class="subtitle">
+            Enter your monthly take-home income and we'll generate a
+            personalized spending plan you can tune to your life.
+        </p>
+        <div class="card">
+            <label>
+                MONTHLY TAKE-HOME INCOME
+            </label>
+            <div class="input-row">
+                <span class="dollar">$</span>
+                <input id="income" type="text" value="0" autocomplete="off">
             </div>
-            <p>Editable plan</p>
+            <hr>
+            <div class="quick-buttons">
+                <button data-value="2500">$2.5k</button>
+                <button data-value="4000">$4k</button>
+                <button data-value="6000">$6k</button>
+                <button data-value="10000">$10k</button>
+            </div>
+            <div class="Generate">
+                <button id="generate">
+                    Generate My Budget
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
         </div>
-        <div class="feature">
-            <div class="logo">
-                <img src="balance.png" width="50" height="50"/>
+
+        <div class="features">
+            <div class="feature">
+                <div class="logo">
+                    <img src="chart.png" width="50" height="50" />
+                </div>
+                <p>Visual chart</p>
             </div>
-            <p>Balance tracker</p>
+            <div class="feature">
+                <div class="logo">
+                    <img src="pencil.png" width="50" height="50" />
+                </div>
+                <p>Editable plan</p>
+            </div>
+            <div class="feature">
+                <div class="logo">
+                    <img src="balance.png" width="50" height="50" />
+                </div>
+                <p>Balance tracker</p>
+            </div>
         </div>
     </div>
-</div>
-<br> <br> <br>
-<script src="script.js"></script>
+    <br> <br> <br>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

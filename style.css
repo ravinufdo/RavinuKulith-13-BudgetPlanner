@@ -1,193 +1,206 @@
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Inter',sans-serif;
-    background:#07111F;
-    color:white;
-    overflow-x:hidden;
-}
-
-
-.background-grid{
-    position:fixed;
-    inset:0;
-    background-color:#07111F;
-    background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-    background-size:56px 56px;
-    z-index:-1;
-}
-
-.container{
-    width:100%;
-    max-width:900px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding-top:70px;
+body {
+    font-family: 'Inter', sans-serif;
+    background: #07111F;
+    color: white;
+    overflow-x: hidden;
 }
 
 
-h1{
-    font-size:56px;
-    font-weight:800;
-    letter-spacing:-2px;
-    margin-bottom:18px;
+.background-grid {
+    position: fixed;
+    inset: 0;
+    background-color: #07111F;
+    background-image: linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+    background-size: 56px 56px;
+    z-index: -1;
 }
 
-.subtitle{
-    width:620px;
-    max-width:95%;
-    color:#7F8DAA;
-    text-align:center;
-    font-size:19px;
-    line-height:1.7;
-    margin-bottom:48px;
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
 }
 
-.card{
-    width:100%;
-    max-width:720px;
-    background:#111A2B;
-    border-radius:28px;
-    padding:42px;
-    border:1px solid rgba(255,255,255,.04);
-    box-shadow:0 20px 60px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.03);
+
+h1 {
+    font-size: 56px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
 }
 
-.card label{
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:2px;
-    color:#5E7395;
+.subtitle {
+    width: 620px;
+    max-width: 95%;
+    color: #7F8DAA;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 48px;
 }
 
-.input-row{
-    display:flex;
-    align-items:center;
-    margin-top:18px;
-    margin-bottom:22px;
+.card {
+    width: 100%;
+    max-width: 720px;
+    background: #111A2B;
+    border-radius: 28px;
+    padding: 42px;
+    border: 1px solid rgba(255, 255, 255, .04);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .03);
 }
 
-.dollar{
-    color:#2F5EAA;
-    font-size:54px;
-    font-weight:600;
-    margin-right:10px;
+.card label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #5E7395;
 }
 
-input{
-    width:100%;
-    border:none;
-    outline:none;
-    background:transparent;
-    color:#C9D4E6;
-    font-size:68px;
-    font-weight:700;
-    letter-spacing:-3px;
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+    margin-bottom: 22px;
 }
 
-input::placeholder{
-    color:#C9D4E6;
+.dollar {
+    color: #2F5EAA;
+    font-size: 54px;
+    font-weight: 600;
+    margin-right: 10px;
 }
 
-hr{
-    border:none;
-    height:1px;
-    background:rgba(255,255,255,.05);
-    margin-bottom:32px;
+input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #C9D4E6;
+    font-size: 68px;
+    font-weight: 700;
+    letter-spacing: -3px;
 }
 
-.quick-buttons{
-    display:flex;
-    gap:16px;
-    margin-bottom:36px;
+input::placeholder {
+    color: #C9D4E6;
 }
 
-.quick-buttons button{
-    flex:1;
-    height:56px;
-    border-radius:14px;
-    background:#162238;
-    color:#6E87AD;
-    border:none;
-    font-weight:700;
-    cursor:pointer;
-    transition:.25s;
+hr {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, .05);
+    margin-bottom: 32px;
 }
 
-.quick-buttons button:hover{
-    background:#21416D;
-    color:white;
+.quick-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 36px;
 }
 
-#generate{
-    width:100%;
-    height:70px;
-    border:none;
-    border-radius:18px;
-    background:#3E73D9;
-    color:white;
-    font-size:20px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.25s;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    box-shadow:0 12px 30px rgba(50,110,255,.35);
+.quick-buttons button {
+    flex: 1;
+    height: 56px;
+    border-radius: 14px;
+    background: #162238;
+    color: #6E87AD;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
 }
 
-#generate:hover{
-    transform:translateY(-2px);
-    background:#4D82EA;
+.quick-buttons button:hover {
+    background: #21416D;
+    color: white;
 }
 
-#generate:active{
-    transform:scale(.98);
+#generate {
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-radius: 18px;
+    background: #3E73D9;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 12px 30px rgba(50, 110, 255, .35);
 }
 
-.features{
-    margin-top:42px;
-    display:flex;
-    gap:90px;
+#generate:hover {
+    transform: translateY(-2px);
+    background: #4D82EA;
 }
 
-.feature{
-    text-align:center;
+#generate:active {
+    transform: scale(.98);
 }
 
-.logo{
-    font-size:28px;
-    margin-bottom:10px;
+.features {
+    margin-top: 42px;
+    display: flex;
+    gap: 90px;
 }
 
-.feature p{
-    color:#7283A2;
-    font-size:15px;
+.feature {
+    text-align: center;
 }
 
-@media(max-width:768px){
-.card{padding:28px;}
-h1{font-size:42px;}
-input{font-size:52px;}
-
-.dollar{font-size:44px;}
-
-.quick-buttons{flex-wrap:wrap;}
-
-.quick-buttons button{
-width:48%;
-flex:none;
+.logo {
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
-.features{gap:35px;}
+.feature p {
+    color: #7283A2;
+    font-size: 15px;
+}
+
+@media(max-width:768px) {
+    .card {
+        padding: 28px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    input {
+        font-size: 52px;
+    }
+
+    .dollar {
+        font-size: 44px;
+    }
+
+    .quick-buttons {
+        flex-wrap: wrap;
+    }
+
+    .quick-buttons button {
+        width: 48%;
+        flex: none;
+    }
+
+    .features {
+        gap: 35px;
+    }
 }
 
 
@@ -195,12 +208,9 @@ flex:none;
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     overflow: hidden;
-
     pointer-events: none;
     z-index: 0;
 }
